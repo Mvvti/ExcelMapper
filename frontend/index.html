@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator pliku wyjściowego</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="card">
+            <header class="card-header">
+                <h1>Zamówienia Politechnika Wrocławska</h1>
+            </header>
+
+            <section class="form-grid" aria-label="Sekcja wyboru plików">
+                <div class="form-row">
+                    <label for="order-file">Plik zamówienia</label>
+                    <input id="order-file" type="text" placeholder="Wybierz plik zamówienia...">
+                    <button type="button" class="btn btn-secondary">Wybierz</button>
+                </div>
+
+                <div class="form-row">
+                    <label for="price-file">Plik cennika</label>
+                    <input id="price-file" type="text" placeholder="Wybierz plik cennika...">
+                    <button type="button" class="btn btn-secondary">Wybierz</button>
+                </div>
+
+                <div class="form-row">
+                    <label for="facility-file">Plik placówek</label>
+                    <input id="facility-file" type="text" placeholder="Wybierz plik placówek...">
+                    <button type="button" class="btn btn-secondary">Wybierz</button>
+                </div>
+
+                <div class="form-row">
+                    <label for="template-file">Plik template</label>
+                    <input id="template-file" type="text" placeholder="Wybierz plik template...">
+                    <button type="button" class="btn btn-secondary">Wybierz</button>
+                </div>
+
+                <div class="form-row">
+                    <label for="output-folder">Folder output</label>
+                    <input id="output-folder" type="text" placeholder="Wybierz folder output...">
+                    <button type="button" class="btn btn-secondary">Wybierz</button>
+                </div>
+            </section>
+
+            <section class="date-row" aria-label="Data utworzenia i termin dostawy">
+                <label for="delivery-date">Data utworzenia / termin dostawy</label>
+                <input id="delivery-date" type="text" value="2026-04-17">
+            </section>
+
+            <section class="action-row" aria-label="Akcje">
+                <button type="button" class="btn btn-primary">Generuj plik</button>
+                <button type="button" class="btn btn-secondary" id="preview-button">Podgląd</button>
+                <span class="status">Status: Gotowy</span>
+            </section>
+
+            <div class="progress-bar" id="progress-bar" aria-hidden="true">
+                <div class="progress-bar__fill"></div>
+            </div>
+
+            <section id="preview-section" aria-label="Podgląd danych">
+                <h2>Podgląd danych (pierwszych 20 rekordów)</h2>
+                <div class="preview-summary" id="preview-summary"></div>
+                <div class="preview-table-wrap">
+                    <table class="preview-table" id="preview-table">
+                        <thead id="preview-head"></thead>
+                        <tbody id="preview-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="logs-section" aria-label="Logi">
+                <h2>Logi:</h2>
+                <textarea readonly spellcheck="false"></textarea>
+            </section>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
