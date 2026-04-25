@@ -1,4 +1,4 @@
-# Zamowienia
+# OrdersMapper
 
 Zamowienia is a desktop application built with Python + pywebview for converting order documents into output Excel files.
 
